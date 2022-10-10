@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>promise</title>
+</head>
+
+<body>
+</body>
+<script>
+  // 来源 https://www.zhihu.com/question/453677175
+  let b = Promise.resolve().then(() => {
+    console.log(1);
+    debugger;
+    
+    let a  = Promise.resolve(4);
+    b;
+    return a;
+    debugger;
+  }).then(res => {
+    b;
+    debugger
+    console.log(res);
+  })
+  Promise.resolve().then(() => {
+    debugger;
+    console.log(2);
+  }).then(() => {
+    debugger;
+    console.log(3);
+  }).then(() => {
+    debugger;
+    console.log(5);
+  }).then(res => {
+    debugger;
+    console.log(6);
+  })
+</script>
+
+</html>
